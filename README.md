@@ -3,20 +3,37 @@ AntiSamy plugin for Play framework
 ==================================
 
 
-# Usage
+## Usage ##
 
-*    name your policy file to antisamy.xml and put it under conf/ of your application directory
-*    invoke AntiSamyPlugin.filter() to filter dirty string input, you'll get a clean string output (the degree of cleanliness depends on your policy file)
-    String clean = AntiSamyPlugin.filter(dirty);
+1.  name your policy file as *antisamy.xml* and put it under conf/ of your application directory
+2.  edit *conf/dependencies.yml* as following:
+   
+        require
+            - other module... 
+            - antisamysupport -> antisamysupport
+
+        repositories:
+            - other repositories...
+            - antisamysupport:
+                type:      local
+                artifact:  "/path/to/antisamysupport"
+                contains:
+                    - antisamysupport -> *
+
+3.  invoke **AntiSamyPlugin.filter()** in your code to filter dirty input string , you will get a clean output string in return (*the degree of cleanliness depends on how strict your policy file is*)
+
+        String dirty = "<script>alert('I am a real bad ass!');</script>";
+        String clean = AntiSamyPlugin.filter(dirty);
 
 
-# Reference
+## Reference ##
 
-##AntiSamy project
-https://www.owasp.org/index.php/Category:OWASP_AntiSamy_Project
+> ### AntiSamy project ###
+> [https://www.owasp.org/index.php/Category:OWASP_AntiSamy_Project](https://www.owasp.org/index.php/Category:OWASP_AntiSamy_Project)
 
-##AntiSamy Google code
-http://code.google.com/p/owaspantisamy/
+> ### AntiSamy Google code ###
+> [http://code.google.com/p/owaspantisamy/](http://code.google.com/p/owaspantisamy/)
 
-
-
+> ### Play framework ###
+> [http://www.playframework.org/](http://www.playframework.org/)
+ 
