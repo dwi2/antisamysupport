@@ -1,0 +1,5 @@
+self: play -> antisamysupport 0.1
+
+require:
+    - play
+    - org.owasp.antisamy -> antisamy 1.4.5
