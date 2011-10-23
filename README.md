@@ -22,6 +22,8 @@ AntiSamy plugin for Play framework
 
 3.  invoke **AntiSamyPlugin.filter()** in your code to filter dirty input string , you will get a clean output string in return (*the degree of cleanliness depends on how strict your policy file is*)
 
+        import play.modules.antisamysupport.*;
+        ...
         String dirty = "<script>alert('I am a real bad ass!');</script>";
         String clean = AntiSamyPlugin.filter(dirty);
 
