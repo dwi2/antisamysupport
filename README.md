@@ -9,12 +9,16 @@ Play framework provides html escaping and operates automaticlly in its template 
 OWASP AntiSamy Project is one of the best projects to do such things. It allows you customizing filtering policy. If you want to use AntiSamy instantly in your Play framework application and you don't feel like to deal with XML policy file or configuration stuff, this plugin is just for the situation. Follow the *Usage* part of this documentation and start to block malicious input from your application right away.
 
 ## Requirement ##
-* Play framework version 1.2.3
+* [Play framework version 1.2.3](http://www.playframework.org/)
 
     The latest official version of Play framework is 1.2.3 by the time I started to learn it. So I wrote and tested this plugin against 1.2.3.
     I am not sure if this plugin works on any other versions. If your application is writted in other version than 1.2.3 and you really like to use this plugin, you can download the source and type the command to build for your Play framework version.
     
         $> play deps --sync; play build-module
+
+* [Apache Ant](http://ant.apache.org/)
+
+    To build antisamysupport 
 
 ## Usage ##
 
