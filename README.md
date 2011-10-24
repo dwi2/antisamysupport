@@ -18,8 +18,9 @@ OWASP AntiSamy Project is one of the best projects to do such things. It allows 
 
 ## Usage ##
 
-1.  name your policy file as *antisamy.xml* and put it under **conf/** of your application directory
-2.  edit *conf/dependencies.yml* as following:
+1.  Name your policy file as *antisamy.xml* and put it under **conf/** of your application directory.
+    It is OK if you don't have your own policy file or you don't know what is policy file right now. This plugin prepares a default policy file for you. Check out [AntiSamy Project](https://www.owasp.org/index.php/Category:OWASP_AntiSamy_Project) later to know more about policy file. And [Google code of AntiSamy](http://code.google.com/p/owaspantisamy/downloads/list) has some example policy files to download.
+2.  Edit *conf/dependencies.yml* as following:
    
         require
             - other module... 
@@ -33,7 +34,7 @@ OWASP AntiSamy Project is one of the best projects to do such things. It allows 
                 contains:
                     - antisamysupport -> *
 
-3.  invoke **AntiSamyPlugin.filter()** in your code to filter dirty input string , you will get a clean output string in return (*the degree of cleanliness depends on how strict your policy file is*)
+3.  Invoke **AntiSamyPlugin.filter()** in your code to filter dirty input string , you will get a clean output string in return (*the degree of cleanliness depends on how strict your policy file is*)
 
         import play.modules.antisamysupport.*;
         ...
@@ -42,7 +43,7 @@ OWASP AntiSamy Project is one of the best projects to do such things. It allows 
 
 
 ## Future works ##
-* to allow multiple policy files in one single application
+* To allow multiple policy files in one single application
 
 ## Reference ##
 
