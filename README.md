@@ -14,13 +14,21 @@ OWASP AntiSamy Project is one of the best projects to do such things. It allows 
     The latest official version of Play framework is 1.2.3 by the time I started to learn it. So I wrote and tested this plugin against 1.2.3.
     I am not sure if this plugin works on any other versions. If your application is writted in other version than 1.2.3 and you really like to use this plugin, you can download the source and type the command to build for your Play framework version.
     
-        play build-module
+        $> play deps --sync; play build-module
 
 ## Usage ##
 
-1.  Name your policy file as *antisamy.xml* and put it under **conf/** of your application directory.
+1.  download [source code](https://github.com/dwi2/antisamysupport) of antisamy plugin
+
+        $> git clone git@github.com:dwi2/antisamysupport.git
+
+2.  resolve dependencies and build antisamysupport
+
+        $antisamysupport> play deps --sync; play build-module 
+
+3.  Name your policy file as *antisamy.xml* and put it under **conf/** of your application directory.
     It is OK if you don't have your own policy file or you don't know what is policy file right now. This plugin prepares a default policy file for you. Check out [AntiSamy Project](https://www.owasp.org/index.php/Category:OWASP_AntiSamy_Project) later to know more about policy file. And [Google code of AntiSamy](http://code.google.com/p/owaspantisamy/downloads/list) has some example policy files to download.
-2.  Edit *conf/dependencies.yml* as following:
+4.  Edit *conf/dependencies.yml* as following:
    
         require
             - other module... 
@@ -34,7 +42,7 @@ OWASP AntiSamy Project is one of the best projects to do such things. It allows 
                 contains:
                     - antisamysupport -> *
 
-3.  Invoke **AntiSamyPlugin.filter()** in your code to filter dirty input string , you will get a clean output string in return (*the degree of cleanliness depends on how strict your policy file is*)
+5.  Invoke **AntiSamyPlugin.filter()** in your code to filter dirty input string , you will get a clean output string in return (*the degree of cleanliness depends on how strict your policy file is*)
 
         import play.modules.antisamysupport.*;
         ...
