@@ -20,7 +20,7 @@ OWASP AntiSamy Project is one of the best projects to do such things. It allows 
 
 1.  download [source code](https://github.com/dwi2/antisamysupport) of antisamy plugin
 
-        $> git clone git@github.com:dwi2/antisamysupport.git
+        $> git clone git://github.com/dwi2/antisamysupport.git 
 
 2.  resolve dependencies and build antisamysupport
 
