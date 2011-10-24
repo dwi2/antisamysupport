@@ -6,7 +6,6 @@ import play.classloading.*;
 public class AntiSamyPlugin extends PlayPlugin {
 
   public final static String EMPTY = "";
-  public final static String FILTERED = "content filtered";
 
   private static boolean pluginActive = false;
   private static AntiSamyService service = null;
@@ -27,7 +26,8 @@ public class AntiSamyPlugin extends PlayPlugin {
       return service.filter(input);
     }
     else {
-      return FILTERED;
+      Logger.warn("AntiSamySupport plugin did not active! Please check your antisamy.xml and dependencies.yml again.");
+      return input;
     }
   }
 }

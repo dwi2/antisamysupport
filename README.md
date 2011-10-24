@@ -38,8 +38,8 @@ OWASP AntiSamy Project is one of the best projects to do such things. It allows 
 
         import play.modules.antisamysupport.*;
         ...
-        String dirty = "<script>alert('I am a real bad ass!');</script>";
-        String clean = AntiSamyPlugin.filter(dirty);
+        String dirty = "Lorem<script>alert('I am a real bad ass!');</script> ipsum";
+        String clean = AntiSamyPlugin.filter(dirty); // should return 'Lorem ipsum'
 
 
 ## Future works ##
