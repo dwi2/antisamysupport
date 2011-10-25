@@ -12,27 +12,22 @@ OWASP AntiSamy Project is one of the best projects to do such things. It allows 
 * [Play framework version 1.2.3](http://www.playframework.org/)
 
     The latest official version of Play framework is 1.2.3 by the time I started to learn it. So I wrote and tested this plugin against 1.2.3.
-    I am not sure if this plugin works on any other versions. If your application is writted in other version than 1.2.3 and you really like to use this plugin, you can download the source and type the command to build for your Play framework version.
+    I am not sure whether this plugin works on any other versions or not. If your application is written in version other than 1.2.3 and you really like to use this plugin, you can download the source and type the command to build for your Play framework version.
     
         $> play deps --sync; play build-module
 
 * [Apache Ant](http://ant.apache.org/)
 
-    To build antisamysupport 
+    We need Ant to build antisamysupport 
 
 ## Usage ##
 
-1.  download [source code](https://github.com/dwi2/antisamysupport) of antisamy plugin
+### Use the prebuild version ###
+1. Download the [prebuild zip file](https://github.com/dwi2/antisamysupport/raw/master/dist/antisamysupport-0.1.zip) and extract it. 
 
-        $> git clone git://github.com/dwi2/antisamysupport.git 
-
-2.  resolve dependencies and build antisamysupport
-
-        $antisamysupport> play deps --sync; play build-module 
-
-3.  Name your policy file as *antisamy.xml* and put it under **conf/** of your application directory.
-    It is OK if you don't have your own policy file or you don't know what is policy file right now. This plugin prepares a default policy file for you. Check out [AntiSamy Project](https://www.owasp.org/index.php/Category:OWASP_AntiSamy_Project) later to know more about policy file. And [Google code of AntiSamy](http://code.google.com/p/owaspantisamy/downloads/list) has some example policy files to download.
-4.  Edit *conf/dependencies.yml* as following:
+2. Name your policy file as *antisamy.xml* and put it under **conf/** of your application directory.
+    It is fine if you don't have your own policy file or you don't know what is policy file right now. This plugin prepares a default policy file for you. Check out [AntiSamy Project](https://www.owasp.org/index.php/Category:OWASP_AntiSamy_Project) later to know more about policy file. And [Google code of AntiSamy](http://code.google.com/p/owaspantisamy/downloads/list) has some example policy files to download.
+3. Edit *conf/dependencies.yml* of your application as follows:
    
         require
             - other module... 
@@ -46,25 +41,35 @@ OWASP AntiSamy Project is one of the best projects to do such things. It allows 
                 contains:
                     - antisamysupport -> *
 
-5.  Invoke **AntiSamyPlugin.filter()** in your code to filter dirty input string , you will get a clean output string in return (*the degree of cleanliness depends on how strict your policy file is*)
+4. Invoke **AntiSamyPlugin.filter()** in your code to filter dirty input string , you will get a clean output string in return (*the degree of cleanliness depends on how strict your policy file is*)
 
         import play.modules.antisamysupport.*;
         ...
         String dirty = "Lorem<script>alert('I am a real bad ass!');</script> ipsum";
         String clean = AntiSamyPlugin.filter(dirty); // should return 'Lorem ipsum'
 
+### Build from source ###
+1. Download [source code](https://github.com/dwi2/antisamysupport) of antisamy plugin
+
+        $> git clone git://github.com/dwi2/antisamysupport.git 
+
+2. Resolve dependencies and build antisamysupport
+
+        $antisamysupport> play deps --sync; play build-module 
+
+3. Follow the step 2 to step 4 in the above section of **Use the prebuild version**
 
 ## Future works ##
 * To allow multiple policy files in one single application
 
 ## Reference ##
 
-> ### AntiSamy project ###
-> [https://www.owasp.org/index.php/Category:OWASP_AntiSamy_Project](https://www.owasp.org/index.php/Category:OWASP_AntiSamy_Project)
+**AntiSamy project:**
+[https://www.owasp.org/index.php/Category:OWASP_AntiSamy_Project](https://www.owasp.org/index.php/Category:OWASP_AntiSamy_Project)
 
-> ### AntiSamy Google code ###
-> [http://code.google.com/p/owaspantisamy/](http://code.google.com/p/owaspantisamy/)
+**AntiSamy Google code:**
+[http://code.google.com/p/owaspantisamy/](http://code.google.com/p/owaspantisamy/)
 
-> ### Play framework ###
-> [http://www.playframework.org/](http://www.playframework.org/)
+**Play framework:**
+[http://www.playframework.org/](http://www.playframework.org/)
  
