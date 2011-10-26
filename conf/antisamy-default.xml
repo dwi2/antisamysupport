@@ -18,7 +18,7 @@
 	<directives>
 		<directive name="omitXmlDeclaration" value="true" />
 		<directive name="omitDoctypeDeclaration" value="true" />
-		<directive name="maxInputSize" value="200" />
+		<directive name="maxInputSize" value="1000" />
 		<directive name="useXHTML" value="true" />
 		<directive name="formatOutput" value="true" />
 
