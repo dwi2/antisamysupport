@@ -5,7 +5,7 @@ AntiSamy plugin for Play framework
 0.1
 
 ## Introduction ##
-Play framework provides html escaping and operates automaticlly in its template engine. However, if you have the need of customizing policy of filtering user input of your application, or user input in your application would never have the chance to be processed by template engine of Play framework, then you might need some other tools to filter user input to prevent from attack of injecting malicious JavaScript. 
+Play framework provides html escaping and operates automaticlly in its template engine. However, if you have the need of customizing policy of filtering user input of your application, or user input in your application would never have the chance to be processed by template engine of Play framework, then you might need some other tools to filter user input to prevent attack of injecting malicious JavaScript. 
 OWASP AntiSamy Project is one of the best projects to do such things. It allows you customizing filtering policy. If you want to use AntiSamy instantly in your Play framework application and you don't feel like to deal with XML policy file or configuration stuff, this plugin is just for the situation. Follow the *Usage* part of this documentation and start to block malicious input from your application right away.
 
 ## Requirement ##
