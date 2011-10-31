@@ -61,6 +61,8 @@ OWASP AntiSamy Project is one of the best projects to do such things. It allows 
 
 ## Future works ##
 * To allow multiple policy files in one single application
+* Support two scanning mode of antisamy: dom scan and sax scan
+* Contribute to Play Framework
 
 ## Reference ##
 
