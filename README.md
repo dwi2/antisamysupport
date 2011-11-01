@@ -23,7 +23,7 @@ OWASP AntiSamy Project is one of the best projects to do such things. It allows 
 ## Usage ##
 
 ### Use the prebuild version ###
-1. Download the [prebuild zip file](https://github.com/dwi2/antisamysupport/raw/master/dist/antisamysupport-0.1.zip) and extract it. 
+1. Download the [prebuild zip file](https://github.com/dwi2/antisamysupport/raw/master/dist/antisamysupport-0.1.zip) and extract it into a directory called *antisamysupport*. (or any other names you like) 
 
 2. Name your policy file as *antisamy.xml* and put it under **conf/** of your application directory.
     It is fine if you don't have your own policy file or you don't know what is policy file right now. This plugin prepares a default policy file for you. Check out [AntiSamy Project](https://www.owasp.org/index.php/Category:OWASP_AntiSamy_Project) later to know more about policy file. And [Google code of AntiSamy](http://code.google.com/p/owaspantisamy/downloads/list) has some example policy files to download.
